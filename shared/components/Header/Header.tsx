@@ -2,9 +2,13 @@ import { Bell, ChevronDown } from 'lucide-react';
 
 interface HeaderProps {
   userInitials?: string;
+  userName?: string
 }
 
-const Header = ({ userInitials = 'DS' }: HeaderProps) => (
+const Header = ({
+  userInitials = 'JD',
+  userName = 'John',
+}: HeaderProps) => (
   <header className="w-full bg-white px-8 py-4">
     <div className="flex items-center justify-end">
       <div className="flex items-center gap-4">
@@ -21,6 +25,7 @@ const Header = ({ userInitials = 'DS' }: HeaderProps) => (
         </button>
       </div>
     </div>
+    <h1 className="text-3xl text-gray-900">Hello, {userName}!</h1>
   </header>
 );
 
