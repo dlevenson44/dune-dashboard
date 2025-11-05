@@ -1,21 +1,15 @@
 'use client'
 
-import { useState, useEffect } from 'react'
 import { ChevronsUpDown, Shield } from 'lucide-react';
 
-const SidebarHeader = () => {
-    const [primaryColor, setPrimaryColor] = useState('')
+import { usePalette } from '~/shared/hooks/usePalette';
 
-    useEffect(() => {
-      const computedColor = getComputedStyle(document.documentElement).getPropertyValue('--color-dune-primary');
-      // eslint-disable-next-line react-hooks/set-state-in-effect
-      setPrimaryColor(computedColor)
-    }, [])
+const SidebarHeader = () => {
+    const { primary } = usePalette()
 
     return (
       <div className="flex items-center gap-2 px-6 py-4 border-gray-200 hover:cursor-pointer">
-        <Shield className="w-6 h-6" fill={primaryColor} />
-        {/* <Shield className="w-6 h-6" fill="[var(--color-dune-primary)]" /> */}
+        <Shield className="w-6 h-6" fill={primary} />
         <span className="text-lg font-semibold">Dune Security</span>
         <ChevronsUpDown />
       </div>
