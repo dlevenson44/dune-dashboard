@@ -1,7 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  // enforce RSM to improve error detection during dev
+  reactStrictMode: true,
 };
 
 export default nextConfig;
