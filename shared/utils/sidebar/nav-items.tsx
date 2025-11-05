@@ -1,12 +1,6 @@
-import type { ComponentType } from 'react';
 import { Building, Network, User } from 'lucide-react';
 
-interface NavItem {
-  id: string;
-  label: string;
-  icon: ComponentType<{ className?: string }>;
-  active?: boolean;
-}
+import type { NavItem } from '~/shared/types/layout';
 
 export const navItems: NavItem[] = [
   {

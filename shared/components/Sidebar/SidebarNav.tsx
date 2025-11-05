@@ -1,11 +1,13 @@
-'use client'
-
 import { useState } from "react";
 import { ChevronDown, ChevronRight } from 'lucide-react';
 
-import { navItems } from "~/shared/utils/sidebar/nav-items";
+import type { NavItem } from '~/shared/types/layout';
 
-const SidebarNav = () => {
+interface SidebarNavProps {
+  navItems: NavItem[];
+}
+
+const SidebarNav = ({ navItems }: SidebarNavProps) => {
   const [expandNav, setExpandNav] = useState(true)
   const iconStyle = 'h-[14px]'
 

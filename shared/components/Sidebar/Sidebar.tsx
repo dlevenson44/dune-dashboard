@@ -1,3 +1,7 @@
+'use client'
+
+import { navItems } from '~/shared/utils/sidebar/nav-items';
+
 import SidebarHeader from './SidebarHeader';
 import SidebarNav from './SidebarNav';
 
@@ -8,7 +12,7 @@ const Sidebar = () => {
       <SidebarHeader />
 
       {/* Navigation Section */}
-      <SidebarNav />
+      <SidebarNav navItems={navItems} />
     </div>
   );
 };
