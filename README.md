@@ -1,36 +1,21 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Dune Dashboard
 
-## Getting Started
+- To run this app, ensure you have Node v20 and pnpm installed on your machine.
+  - Node Install Instructions: https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Express_Nodejs/development_environment#installing_node
+    - Run `node -v` in your terminal to verify your version and successful install
+  - pnpm install instructions: Once node is installed, simply run `npm install -g pnpm`
+    - Run `pnpm -v` to verify your install was successful
 
-First, run the development server:
+- Once the above is done, you can take the below steps to run this on your machine:
+  1. Open your terminal
+  2. Clone the repo
+     - Run `git clone git@github.com:dlevenson44/dune-dashboard.git`
+  3. CD into the folder from your terminal
+     -  Run `cd dune-dashboard`
+  4. Install the dependencies from your terminal
+     - Run `pnpm i`
+  5. Build the app in your terminal
+     - Run `pnpm run build`
+  6. Start the local environment from your terminal
+     - Run `pnpm run dev`
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
