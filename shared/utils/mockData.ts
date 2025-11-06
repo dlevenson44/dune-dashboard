@@ -5,7 +5,7 @@ import {
   OrganizationStats, 
   SimulatedAttack, 
   AttackDetails 
-} from "~/shared/types/dashboard";
+} from "~/features/dashboard/types/dashboard";
 
 export const mockRiskScoreData: RiskScoreData = {
   score: 48,

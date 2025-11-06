@@ -1,7 +1,7 @@
 import React from "react";
 
 import Card from "~/shared/components/Card/Card"
-import { RiskScoreFactor } from "~/shared/types/dashboard";
+import { RiskScoreFactor } from "~/features/dashboard/types/dashboard";
 
 interface RiskScoreFactorsProps {
   factors: RiskScoreFactor[];

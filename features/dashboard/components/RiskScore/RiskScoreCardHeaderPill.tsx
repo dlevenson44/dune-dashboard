@@ -1,6 +1,6 @@
 'use client'
 
-import type { Status } from "~/shared/types/dashboard"
+import type { Status } from "~/features/dashboard/types/dashboard"
 
 interface RiskScoreCardHeaderPillProps {
   status: Status;
