@@ -10,7 +10,7 @@ import Sidebar from '~/shared/components/Sidebar/Sidebar';
 import SwitchFilter from '~/shared/components/Filters/SwitchFilter';
 import {
   mockRiskScoreData,
-  // mockRiskScoreFactors,
+  mockRiskScoreFactors,
   // mockTimeSeriesData,
   // mockOrganizationStats,
   // mockSimulatedAttacks,
@@ -48,9 +48,9 @@ const Dashboard = () => {
             </div>
 
           {/* Top Row Cards */}
-          <div className="grid grid-cols-[30%_70%] lg:grid-cols-[30%_70%] gap-8 mb-6 mr-8">
+          <div className="grid grid-cols-1 lg:grid-cols-[30%_70%] gap-8 mb-6 mr-8">
             <RiskScore data={mockRiskScoreData} />
-            {/* <RiskScoreFactors factors={mockRiskScoreFactors} /> */}
+            <RiskScoreFactors factors={mockRiskScoreFactors} />
           </div>
           </div>
         </main>
