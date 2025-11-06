@@ -38,7 +38,7 @@ export interface SimulatedAttack {
   };
 }
 
-export interface AttackDetails {
+export interface UserInteractionResponse {
   name: string;
   attackModality: string;
   riskScore: number;

@@ -3,3 +3,4 @@ export { default as OrganizationOverview } from "./OrganizationOverview/Organiza
 export { default as RiskScore } from "./RiskScore/RiskScore";
 export { default as RiskScoreFactors } from "./RiskScoreFactors/RiskScoreFactors";
 export { default as RiskScoreOverTime } from "./RiskScoreOverTime/RiskScoreOverTime";
+export { default as UserInteraction } from "./UserInteraction/UserInteraction";

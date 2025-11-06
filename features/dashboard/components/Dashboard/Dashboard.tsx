@@ -6,14 +6,16 @@ import {
   OrganizationOverview,
   RiskScore,
   RiskScoreFactors,
-  RiskScoreOverTime
+  RiskScoreOverTime,
+  UserInteraction
 } from "~/features/dashboard/components";
 import { Header, Sidebar, SwitchFilter } from "~/shared/components";
 import {
   mockRiskScoreData,
   mockRiskScoreFactors,
   mockTimeSeriesData,
-  mockOrganizationStats
+  mockOrganizationStats,
+  mockAttackDetails
 } from "~/shared/utils/mockData";
 import { timeFilters } from "~/shared/utils/filters/time-filter";
 
@@ -58,6 +60,13 @@ const Dashboard = () => {
             <div className="grid grid-cols-1 lg:grid-cols-[55%_45%] gap-4 md:gap-8 mb-6 md:mr-8">
               <RiskScoreOverTime data={mockTimeSeriesData} />
               <OrganizationOverview stats={mockOrganizationStats} />
+            </div>
+
+            <div className="mt-16">
+              <h2 className="text-2xl text-gray-900 mt-2">Simulated Attacks</h2>
+              <div className="mt-12">
+                <UserInteraction interactions={mockAttackDetails} />
+              </div>
             </div>
           </div>
         </main>
