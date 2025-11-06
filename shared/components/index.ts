@@ -1,6 +1,7 @@
 export { default as Card } from "./Card/Card";
 export { default as SwitchFilter } from "./Filters/SwitchFilter";
 export { default as Header } from "./Header/Header";
+export { default as LineChart } from "./LineChart/LineChart";
 export { default as Pagination } from "./Pagination/Pagination"
 export { default as SearchInput } from "./SearchInput/SearchInput";
 export { default as Sidebar } from "./Sidebar/Sidebar";

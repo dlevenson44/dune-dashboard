@@ -20,7 +20,6 @@ const RiskScoreFactors = ({ factors }: RiskScoreFactorsProps) => {
             </p>
             <div className="flex items-center gap-2">
               <div className={`w-3 h-3 rounded-full ${getStatusDotColor(factor.status)}`} />
-              {/* <span className="xs:text-sm text-3xl"> */}
               <span className="text-sm sm:text-xl lg:text-3xl">
                 {factor.status}
               </span>
