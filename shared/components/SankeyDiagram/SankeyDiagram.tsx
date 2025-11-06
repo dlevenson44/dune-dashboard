@@ -85,7 +85,8 @@ const SankeyDiagram = ({
                 height: `${nodeHeight}px`,
               }}
             >
-              {node.value} {node.label}
+              <strong>{node.value}&nbsp;</strong>
+              {node.label}
             </div>
           );
         })}
