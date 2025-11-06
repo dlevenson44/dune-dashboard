@@ -18,6 +18,7 @@ const RiskScore: React.FC<RiskScoreProps> = ({ data }) => {
     const score = data.score;
     const totalBars = 20;
     const currentBar = Math.floor((score / 100) * totalBars); // Bar containing the current score
+    console.log(score, totalBars)
 
     for (let i = 0; i < totalBars; i++) {
       let height = 'h-6';
@@ -28,7 +29,7 @@ const RiskScore: React.FC<RiskScoreProps> = ({ data }) => {
       if (i < totalBars * 0.3) {
         color = 'bg-green-500';
       } else if (i < totalBars * 0.6) {
-        color = 'bg-yellow-500';
+        color = 'bg-yellow-300';
       } else if (i < totalBars * 0.8) {
         color = 'bg-orange-500';
       } else {
