@@ -3,14 +3,14 @@
 import { useState } from "react";
 
 // import OrganizationOverview from "../OrganizationOverview";
-import { RiskScore, RiskScoreFactors } from "~/features/dashboard/components";
+import { RiskScore, RiskScoreFactors, RiskScoreOverTime } from "~/features/dashboard/components";
 import Header from "~/shared/components/Header/Header";
 import Sidebar from "~/shared/components/Sidebar/Sidebar";
 import SwitchFilter from "~/shared/components/Filters/SwitchFilter";
 import {
   mockRiskScoreData,
   mockRiskScoreFactors,
-  // mockTimeSeriesData,
+  mockTimeSeriesData,
   // mockOrganizationStats,
   // mockSimulatedAttacks,
   // mockAttackDetails,
@@ -53,8 +53,8 @@ const Dashboard = () => {
             </div>
 
             {/* Risk Score Over Time and Org Overview Cards */}
-            <div className="grid grid-cols-1 lg:grid-cols-[30%_70%] gap-8 mb-6 mr-8">
-              <RiskScore data={mockRiskScoreData} />
+            <div className="grid grid-cols-1 lg:grid-cols-[55%_45%] gap-8 mb-6 mr-8">
+              <RiskScoreOverTime data={mockTimeSeriesData} />
               <RiskScoreFactors factors={mockRiskScoreFactors} />
             </div>
           </div>
