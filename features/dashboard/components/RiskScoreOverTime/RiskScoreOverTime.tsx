@@ -8,7 +8,6 @@ interface RiskScoreOverTimeProps {
 
 const RiskScoreOverTime = ({ data }: RiskScoreOverTimeProps) => (
   <Card header="Risk Score Over Time">
-
     <ResponsiveContainer width="100%" height={200}>
       <LineChart data={data} margin={{ top: 5, right: 5, left: 5, bottom: 5 }}>
         <defs>
@@ -56,7 +55,6 @@ const RiskScoreOverTime = ({ data }: RiskScoreOverTimeProps) => (
           stroke="#F59E0B"
           strokeWidth={2}
           dot={false}
-          // dot={{ fill: '#F59E0B', strokeWidth: 2, r: 3 }}
           activeDot={{ r: 5 }}
           strokeDasharray="4"
           filter="url(#yellowShadow)"

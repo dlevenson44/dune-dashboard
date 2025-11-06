@@ -1,21 +1,15 @@
-import { OrganizationStats } from '~/features/dashboard/types/dashboard';
+import type { OrganizationStats } from "~/features/dashboard/types/dashboard";
 import { Card } from "~/shared/components"
+import { generateRiskCategories } from "~/features/dashboard/utils/organizationOverview";
 
 interface OrganizationOverviewProps {
   stats: OrganizationStats;
 }
 
 const OrganizationOverview = ({ stats }: OrganizationOverviewProps) => {
-  const riskCategories = [
-    { label: 'Low risk', value: stats.lowRisk, color: 'bg-green-500' },
-    { label: 'Medium Risk', value: stats.mediumRisk, color: 'bg-yellow-500' },
-    { label: 'High risk', value: stats.highRisk, color: 'bg-orange-500' },
-    { label: 'Severe risk', value: stats.severeRisk, color: 'bg-red-500' },
-  ];
+  const riskCategories = generateRiskCategories(stats)
 
   return (
-    // <div className="bg-white rounded-lg shadow-sm p-6 border border-gray-200">
-    //   <h3 className="text-sm font-medium text-gray-600 mb-6">Organization Overview</h3>
     <Card header="Organization Overview">
       {/* User Stats */}
       <div className="flex items-start justify-between mb-8 pb-6 border-b border-gray-200">
