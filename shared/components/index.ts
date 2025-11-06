@@ -2,6 +2,7 @@ export { default as Card } from "./Card/Card";
 export { default as SwitchFilter } from "./Filters/SwitchFilter";
 export { default as Header } from "./Header/Header";
 export { default as Pagination } from "./Pagination/Pagination"
+export { default as SearchInput } from "./SearchInput/SearchInput";
 export { default as Sidebar } from "./Sidebar/Sidebar";
 export { default as TableCell } from "./TableCell/TableCell";
 export { default as TableHeader } from "./TableHeader/TableHeader";

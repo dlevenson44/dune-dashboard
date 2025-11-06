@@ -1,7 +1,8 @@
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useState } from "react";
+import { Search } from "lucide-react";
 
 import type { UserInteractionResponse } from "~/features/dashboard/types/dashboard";
-import { Pagination, TableCell, TableHeader, TableRow, Tabs } from "~/shared/components";
+import { Pagination, SearchInput, TableCell, TableHeader, TableRow, Tabs } from "~/shared/components";
 import { getInitials } from "~/shared/utils/helpers";
 import { userInteractionTableTabs } from "~/features/dashboard/utils/userInteraction";
 
@@ -10,7 +11,9 @@ interface UserInteractionTableProps {
 }
 
 const UserInteractionTable = ({ interactions }: UserInteractionTableProps) => {
+  const [searchQuery, setSearchQuery] = useState("");
   const columns = ['Name', 'Attack Modalisty', 'Risk Score', 'Frequency']
+
   const getRiskScoreColor = (score: number) => {
     if (score >= 80) return "text-red-600";
     if (score >= 60) return "text-orange-600";
@@ -18,8 +21,20 @@ const UserInteractionTable = ({ interactions }: UserInteractionTableProps) => {
     return "text-green-600";
   };
 
+  // could add debouncing here
+  const filteredInteractions = interactions.filter((interaction) =>
+    interaction.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   return (
     <div className="bg-white rounded-lg overflow-hidden">
+      {/* Search */}
+      <SearchInput
+        handleChange={(e) => setSearchQuery(e.target.value)}
+        placeholder="Search User"
+        value={searchQuery}
+      />
+
       {/* Tabs */}
       <Tabs tabs={userInteractionTableTabs} />
 
@@ -28,7 +43,7 @@ const UserInteractionTable = ({ interactions }: UserInteractionTableProps) => {
         <table className="w-full">
           <TableHeader headers={columns} />
           <tbody className="bg-white divide-y divide-gray-200">
-            {interactions.map((attack, idx) => (
+            {filteredInteractions.map((attack, idx) => (
               <TableRow key={`ui-table-${idx}`}>
                 <TableCell>
                   <div className="flex items-center">
