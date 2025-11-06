@@ -78,7 +78,7 @@ const SankeyDiagram = ({
             <div
               key={`sankey-node-${index}`}
               className={`absolute px-3 py-1.5 rounded text-xs font-medium whitespace-nowrap text-gray-700 flex items-center z-10 hover:cursor-pointer ${getColorClasses(node.color)}`}
-              onClick={() => handleNodeClick && handleNodeClick(node.id ?? '')}
+              onClick={() => (handleNodeClick && node.id) && handleNodeClick(node.id)}
               style={{
                 left: `${pos.x}px`,
                 top: `${pos.y}px`,
