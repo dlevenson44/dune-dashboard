@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { ChevronDown, ChevronRight } from 'lucide-react';
 
-import type { NavItem } from '~/shared/types/layout';
+import type { NavItem } from '~/shared/types/components';
 
 interface SidebarNavProps {
   navItems: NavItem[];

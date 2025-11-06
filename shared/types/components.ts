@@ -6,3 +6,8 @@ export interface NavItem {
   icon: ComponentType<{ className?: string }>;
   active?: boolean;
 }
+
+export interface Filter {
+  id: string;
+  label: string;
+}

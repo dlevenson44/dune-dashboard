@@ -1,6 +1,6 @@
 import { Building, Network, User } from 'lucide-react';
 
-import type { NavItem } from '~/shared/types/layout';
+import type { NavItem } from '~/shared/types/components';
 
 export const navItems: NavItem[] = [
   {
