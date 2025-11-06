@@ -2,12 +2,18 @@
 
 import { useState } from "react";
 
-import { RiskScore, RiskScoreFactors, RiskScoreOverTime } from "~/features/dashboard/components";
+import {
+  OrganizationOverview,
+  RiskScore,
+  RiskScoreFactors,
+  RiskScoreOverTime
+} from "~/features/dashboard/components";
 import { Header, Sidebar, SwitchFilter } from "~/shared/components";
 import {
   mockRiskScoreData,
   mockRiskScoreFactors,
   mockTimeSeriesData,
+  mockOrganizationStats
 } from "~/shared/utils/mockData";
 import { timeFilters } from "~/shared/utils/filters/time-filter";
 
@@ -48,7 +54,7 @@ const Dashboard = () => {
             {/* Risk Score Over Time and Org Overview Cards */}
             <div className="grid grid-cols-1 lg:grid-cols-[55%_45%] gap-8 mb-6 mr-8">
               <RiskScoreOverTime data={mockTimeSeriesData} />
-              <RiskScoreFactors factors={mockRiskScoreFactors} />
+              <OrganizationOverview stats={mockOrganizationStats} />
             </div>
           </div>
         </main>
