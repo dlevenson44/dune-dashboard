@@ -4,6 +4,7 @@ import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 import type { UserInteractionResponse, TabType } from "~/features/dashboard/types/dashboard";
+import { getInitials } from "~/shared/utils/helpers";
 
 interface UserInteractionTableProps {
   interactions: UserInteractionResponse[];
@@ -72,11 +73,13 @@ const UserInteractionTable = ({ interactions }: UserInteractionTableProps) => {
             </tr>
           </thead>
           <tbody className="bg-white divide-y divide-gray-200">
-            {interactions.map((attack, index) => (
+            {interactions.map((attack, index) => {
+              console.log('attack: ', attack)
+              return (
               <tr key={index} className="hover:bg-gray-50 transition-colors">
                 <td className="px-6 py-4 whitespace-nowrap">
                   <div className="flex items-center">
-                    <div className="w-8 h-8 bg-gray-300 rounded-full mr-3" />
+                    <span className="w-8 h-8 bg-gray-100 text-gray-400 rounded-full mr-2 pt-1 text-center">{getInitials(attack.name)}</span>
                     <span className="text-sm font-medium text-gray-900">{attack.name}</span>
                   </div>
                 </td>
@@ -93,7 +96,7 @@ const UserInteractionTable = ({ interactions }: UserInteractionTableProps) => {
                   <span className="text-sm text-gray-900">{attack.frequency}</span>
                 </td>
               </tr>
-            ))}
+            )})}
           </tbody>
         </table>
       </div>
