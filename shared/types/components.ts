@@ -11,3 +11,8 @@ export interface Filter {
   id: string;
   label: string;
 }
+
+export interface Tab {
+  id: string;
+  label: string;
+}

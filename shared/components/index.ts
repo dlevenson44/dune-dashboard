@@ -1,4 +1,9 @@
 export { default as Card } from "./Card/Card";
 export { default as SwitchFilter } from "./Filters/SwitchFilter";
 export { default as Header } from "./Header/Header";
+export { default as Pagination } from "./Pagination/Pagination"
 export { default as Sidebar } from "./Sidebar/Sidebar";
+export { default as TableCell } from "./TableCell/TableCell";
+export { default as TableHeader } from "./TableHeader/TableHeader";
+export { default as TableRow } from "./TableRow/TableRow";
+export { default as Tabs } from "./Tabs/Tabs";
