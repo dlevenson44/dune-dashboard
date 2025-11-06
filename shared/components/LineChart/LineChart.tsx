@@ -8,7 +8,6 @@ import {
   YAxisProps,
   CartesianGrid,
   Tooltip,
-  TooltipProps,
   ResponsiveContainer
 } from 'recharts';
 import LineShadow from './LineShadow';
@@ -17,7 +16,6 @@ import LineShadow from './LineShadow';
 interface LineChartProps<T> {
   data: T[];
   lineProps?: LineProps;
-  tooltipProps?: TooltipProps;
   xAxisProps?: XAxisProps;
   yAxisProps?: YAxisProps;
 }
@@ -25,7 +23,6 @@ interface LineChartProps<T> {
 const LineChart = <T,>({
   data,
   lineProps,
-  tooltipProps,
   xAxisProps,
   yAxisProps,
 }: LineChartProps<T>) => {
@@ -53,7 +50,6 @@ const LineChart = <T,>({
             borderRadius: '0.5rem',
             fontSize: '12px'
           }}
-          {...tooltipProps}
         />
         <Line
           type="monotone"

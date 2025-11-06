@@ -3,6 +3,7 @@ export { default as SwitchFilter } from "./Filters/SwitchFilter";
 export { default as Header } from "./Header/Header";
 export { default as LineChart } from "./LineChart/LineChart";
 export { default as Pagination } from "./Pagination/Pagination"
+export { default as SankeyDiagram } from "./SankeyDiagram/SankeyDiagram";
 export { default as SearchInput } from "./SearchInput/SearchInput";
 export { default as Sidebar } from "./Sidebar/Sidebar";
 export { default as TableCell } from "./TableCell/TableCell";

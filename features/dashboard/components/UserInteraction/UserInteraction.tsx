@@ -1,6 +1,6 @@
 import type { UserInteractionResponse } from "~/features/dashboard/types/dashboard";
 import { Card } from "~/shared/components";
-import UserInteractionTable from "./UserInteractionTable";
+import UserInteractionData from "./UserInteractionData";
 
 interface UserInteractionProps {
   interactions: UserInteractionResponse[]
@@ -9,7 +9,7 @@ interface UserInteractionProps {
 const UserInteraction = ({ interactions }: UserInteractionProps) => {
   return (
     <Card header="User Interaction" showTooltip>
-      <UserInteractionTable interactions={interactions} />
+      <UserInteractionData interactions={interactions} />
     </Card>
   )
 }

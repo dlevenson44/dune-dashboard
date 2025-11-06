@@ -1,17 +1,29 @@
 import { useState } from "react";
-import { Search } from "lucide-react";
 
 import type { UserInteractionResponse } from "~/features/dashboard/types/dashboard";
-import { Pagination, SearchInput, TableCell, TableHeader, TableRow, Tabs } from "~/shared/components";
+import {
+  Pagination,
+  SearchInput,
+  TableCell,
+  TableHeader,
+  TableRow,
+  Tabs
+} from "~/shared/components";
 import { getInitials } from "~/shared/utils/helpers";
-import { userInteractionTableTabs } from "~/features/dashboard/utils/userInteraction";
+import { userInteractionSankeyNodes, userInteractionTableTabs } from "~/features/dashboard/utils/userInteraction";
+import UserInteractionSankey from "./UserInteractionSankey";
 
-interface UserInteractionTableProps {
+interface UserInteractionDataProps {
   interactions: UserInteractionResponse[];
 }
 
-const UserInteractionTable = ({ interactions }: UserInteractionTableProps) => {
+const UserInteractionData = ({ interactions }: UserInteractionDataProps) => {
   const [searchQuery, setSearchQuery] = useState("");
+  const [activeTab, setActiveTab] = useState(userInteractionTableTabs[0].id)
+
+  const handleTabChange = (id: string) =>
+    setActiveTab(id)
+
   const columns = ['Name', 'Attack Modalisty', 'Risk Score', 'Frequency']
 
   const getRiskScoreColor = (score: number) => {
@@ -28,6 +40,14 @@ const UserInteractionTable = ({ interactions }: UserInteractionTableProps) => {
 
   return (
     <div className="bg-white rounded-lg overflow-hidden">
+      {/* Sankey Flow Diagram */}
+      <UserInteractionSankey
+        handleTabChange={handleTabChange}
+        // this should come from API
+        totalInteractions={10438}
+        nodes={userInteractionSankeyNodes}
+      />
+
       {/* Search */}
       <SearchInput
         handleChange={(e) => setSearchQuery(e.target.value)}
@@ -36,7 +56,11 @@ const UserInteractionTable = ({ interactions }: UserInteractionTableProps) => {
       />
 
       {/* Tabs */}
-      <Tabs tabs={userInteractionTableTabs} />
+      <Tabs
+        activeTab={activeTab}
+        handleTabChange={handleTabChange}
+        tabs={userInteractionTableTabs}
+      />
 
       {/* Table */}
       <div className="overflow-x-auto mt-2">
@@ -77,4 +101,4 @@ const UserInteractionTable = ({ interactions }: UserInteractionTableProps) => {
   );
 };
 
-export default UserInteractionTable;
+export default UserInteractionData;
