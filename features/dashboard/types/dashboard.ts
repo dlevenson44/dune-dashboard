@@ -6,10 +6,12 @@ export interface RiskScoreData {
   trend: number[];
 }
 
+export type RiskScoreFactorStatus = 'Excellent' | 'Poor' | 'Average';
+
 export interface RiskScoreFactor {
   category: string;
   performance: string;
-  status: 'Excellent' | 'Poor' | 'Average';
+  status: RiskScoreFactorStatus;
 }
 
 export interface TimeSeriesData {
