@@ -1,13 +1,12 @@
 'use client'
 
-import { useState } from 'react';
+import { useState } from "react";
 
-import OrganizationOverview from './OrganizationOverview';
-import RiskScore from './RiskScore';
-import RiskScoreFactors from './RiskScoreFactors';
-import Header from '~/shared/components/Header/Header';
-import Sidebar from '~/shared/components/Sidebar/Sidebar';
-import SwitchFilter from '~/shared/components/Filters/SwitchFilter';
+// import OrganizationOverview from "../OrganizationOverview";
+import { RiskScore, RiskScoreFactors } from "~/features/dashboard/components";
+import Header from "~/shared/components/Header/Header";
+import Sidebar from "~/shared/components/Sidebar/Sidebar";
+import SwitchFilter from "~/shared/components/Filters/SwitchFilter";
 import {
   mockRiskScoreData,
   mockRiskScoreFactors,
@@ -17,7 +16,7 @@ import {
   // mockAttackDetails,
   // getTotalInteractions,
 } from "~/shared/utils/mockData";
-import { timeFilters } from '~/shared/utils/filters/time-filter';
+import { timeFilters } from "~/shared/utils/filters/time-filter";
 
 const Dashboard = () => {
   const [filter, setFilter] = useState(timeFilters[0].id)
@@ -47,11 +46,17 @@ const Dashboard = () => {
               />
             </div>
 
-          {/* Top Row Cards */}
-          <div className="grid grid-cols-1 lg:grid-cols-[30%_70%] gap-8 mb-6 mr-8">
-            <RiskScore data={mockRiskScoreData} />
-            <RiskScoreFactors factors={mockRiskScoreFactors} />
-          </div>
+            {/* Risk Score and Risk Score Factor Cards */}
+            <div className="grid grid-cols-1 lg:grid-cols-[30%_70%] gap-8 mb-6 mr-8">
+              <RiskScore data={mockRiskScoreData} />
+              <RiskScoreFactors factors={mockRiskScoreFactors} />
+            </div>
+
+            {/* Risk Score Over Time and Org Overview Cards */}
+            <div className="grid grid-cols-1 lg:grid-cols-[30%_70%] gap-8 mb-6 mr-8">
+              <RiskScore data={mockRiskScoreData} />
+              <RiskScoreFactors factors={mockRiskScoreFactors} />
+            </div>
           </div>
         </main>
       </div>
