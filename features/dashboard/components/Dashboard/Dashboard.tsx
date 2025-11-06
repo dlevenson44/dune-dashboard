@@ -34,7 +34,7 @@ const Dashboard = ({
   organizationStats,
   attackDetails,
 }: DashboardProps) => {
-  const [filter, setFilter] = useState<string>(timeFilters[0].id)
+  const [filter, setFilter] = useState<string>(timeFilters[2].id)
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
   
   const filteredRiskScoreData = useMemo(() =>
