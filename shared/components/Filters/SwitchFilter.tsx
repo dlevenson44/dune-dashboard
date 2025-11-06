@@ -16,7 +16,7 @@ const SwitchFilter = ({
       <button
         key={filter.id}
         onClick={() => handleClick(filter.id)}
-        className={`px-4 py-2 text-sm font-medium rounded-4xl transition-colors ${
+        className={`px-4 py-2 text-sm rounded-4xl transition-colors ${
           activeFilterId === filter.id
             ? 'bg-white text-gray-900'
             : 'text-gray-400 hover:text-gray-900 hover:bg-gray-50'
