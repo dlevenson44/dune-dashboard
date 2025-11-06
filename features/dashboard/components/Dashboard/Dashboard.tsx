@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 
 import {
   OrganizationOverview,
@@ -22,6 +22,22 @@ import { timeFilters } from "~/shared/utils/filters/time-filter";
 const Dashboard = () => {
   const [filter, setFilter] = useState(timeFilters[0].id)
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
+  
+  const filteredRiskScoreData = useMemo(() => mockRiskScoreData[filter], [filter])
+
+  const filteredRiskScoreOverTimeData = useMemo(() => {
+    switch(filter) {
+      case '30days':
+        return mockTimeSeriesData.slice(0, 2);
+      case '60days':
+        return mockTimeSeriesData.slice(0, 3);
+      case '90days':
+        return mockTimeSeriesData.slice(0, 4);
+      case 'alltime':
+      default:
+        return mockTimeSeriesData;
+    }
+  }, [filter])
 
   const handleFilterClick = (filterId: string) =>
     setFilter(filterId)
@@ -52,13 +68,13 @@ const Dashboard = () => {
 
             {/* Risk Score and Risk Score Factor Cards */}
             <div className="grid grid-cols-1 lg:grid-cols-[30%_70%] gap-4 md:gap-8 mb-6 md:mr-8">
-              <RiskScore data={mockRiskScoreData} />
+              <RiskScore data={filteredRiskScoreData} />
               <RiskScoreFactors factors={mockRiskScoreFactors} />
             </div>
 
             {/* Risk Score Over Time and Org Overview Cards */}
             <div className="grid grid-cols-1 lg:grid-cols-[55%_45%] gap-4 md:gap-8 mb-6 md:mr-8">
-              <RiskScoreOverTime data={mockTimeSeriesData} />
+              <RiskScoreOverTime data={filteredRiskScoreOverTimeData} />
               <OrganizationOverview stats={mockOrganizationStats} />
             </div>
 

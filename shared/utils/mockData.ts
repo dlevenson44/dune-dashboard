@@ -4,13 +4,30 @@ import {
   TimeSeriesData, 
   OrganizationStats, 
   SimulatedAttack, 
-  AttackDetails 
+  UserInteractionResponse
 } from "~/features/dashboard/types/dashboard";
 
-export const mockRiskScoreData: RiskScoreData = {
-  score: 48,
-  change: 46,
-  trend: [20, 25, 30, 35, 40, 35, 30, 35, 40, 45, 48, 50],
+export const mockRiskScoreData: Record<string, RiskScoreData> = {
+  '30days': {
+    score: 48,
+    change: 46,
+    trend: [20, 25, 30, 35, 40, 35, 30, 35, 40, 45, 48, 50],
+  },
+  '60days': {
+    score: 78,
+    change: 36,
+    trend: [20, 25, 30, 35, 40, 35, 30, 35, 40, 45, 48, 50],
+  },
+  '90days': {
+    score: 22,
+    change: 76,
+    trend: [20, 25, 30, 35, 40, 35, 30, 35, 40, 45, 48, 50],
+  },
+  'alltime': {
+    score: 60,
+    change: 81,
+    trend: [20, 25, 30, 35, 40, 35, 30, 35, 40, 45, 48, 50],
+  },
 };
 
 export const mockRiskScoreFactors: RiskScoreFactor[] = [
@@ -122,7 +139,7 @@ export const mockSimulatedAttacks: SimulatedAttack[] = [
   },
 ];
 
-export const mockAttackDetails: AttackDetails[] = [
+export const mockAttackDetails: UserInteractionResponse[] = [
   {
     name: 'Seymour Brooks',
     attackModality: 'Email',
