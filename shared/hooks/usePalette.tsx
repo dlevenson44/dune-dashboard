@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 interface ColorPalette {
   primary: string;
-  secondary: string;
+  caution: string;
   danger: string;
   warning: string;
   success: string;
@@ -16,7 +16,7 @@ interface ColorPalette {
 
 const initialState = {
   primary: '',
-  secondary: '',
+  caution: '',
   danger: '',
   warning: '',
   success: '',
@@ -34,9 +34,9 @@ export const usePalette = () => {
   useEffect(() => {
     const paletteValues = {
       primary: getComputedStyle(document.documentElement).getPropertyValue('--color-dune-primary'),
-      secondary: getComputedStyle(document.documentElement).getPropertyValue('--color-dune-secondary'),
-      danger: getComputedStyle(document.documentElement).getPropertyValue('--color-dune-danger'),
+      caution: getComputedStyle(document.documentElement).getPropertyValue('--color-dune-secondary'),
       warning: getComputedStyle(document.documentElement).getPropertyValue('--color-dune-warning'),
+      danger: getComputedStyle(document.documentElement).getPropertyValue('--color-dune-danger'),
       success: getComputedStyle(document.documentElement).getPropertyValue('--color-dune-success'),
       info: getComputedStyle(document.documentElement).getPropertyValue('--color-dune-info'),
       muted: getComputedStyle(document.documentElement).getPropertyValue('--color-dune-muted'),
