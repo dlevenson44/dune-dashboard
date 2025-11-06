@@ -2,7 +2,7 @@ import React from "react";
 import { TrendingDown, TrendingUp } from "lucide-react";
 
 import RiskScoreCardHeaderPill from "./RiskScoreCardHeaderPill";
-import Card from "~/shared/components/Card/Card";
+import { Card } from "~/shared/components";
 import { RiskScoreData } from "~/features/dashboard/types/dashboard";
 
 interface RiskScoreProps {

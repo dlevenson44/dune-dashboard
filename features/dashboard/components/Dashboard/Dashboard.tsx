@@ -2,19 +2,12 @@
 
 import { useState } from "react";
 
-// import OrganizationOverview from "../OrganizationOverview";
 import { RiskScore, RiskScoreFactors, RiskScoreOverTime } from "~/features/dashboard/components";
-import Header from "~/shared/components/Header/Header";
-import Sidebar from "~/shared/components/Sidebar/Sidebar";
-import SwitchFilter from "~/shared/components/Filters/SwitchFilter";
+import { Header, Sidebar, SwitchFilter } from "~/shared/components";
 import {
   mockRiskScoreData,
   mockRiskScoreFactors,
   mockTimeSeriesData,
-  // mockOrganizationStats,
-  // mockSimulatedAttacks,
-  // mockAttackDetails,
-  // getTotalInteractions,
 } from "~/shared/utils/mockData";
 import { timeFilters } from "~/shared/utils/filters/time-filter";
 
